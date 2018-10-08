@@ -25,6 +25,8 @@ In order to install full opencv.js dependencies.
     libgfortran-8-dev
 ```
    - Test it out. Should be running fine.
+   - In the end, the buildpacks should have ordered like this:
+   ![Order](https://cdn.discordapp.com/attachments/463217723934113795/498864531532021760/unknown.png)
 
 Usage:
     
