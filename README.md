@@ -1,19 +1,34 @@
-# heroku-buildpack-cmake
+# heroku18-buildpack-opencv-nodejs-bootstrap
 
 [![Build Status](https://travis-ci.com/Starkast/heroku-buildpack-cmake.svg?branch=master)](https://travis-ci.com/Starkast/heroku-buildpack-cmake)
 
-Yet another [Heroku Buildpack][Buildpacks] for [CMake](https://cmake.org/), but this one downloads CMake from the official website, [cmake.org](https://cmake.org/download/).
+This buildpack contains neccessary files and install packages from Arch Linux to make opencv.js from NodeJs runs on Heroku-18 stack.
+This is only the boostrap package. Put this as first in your buildpack.
+
+In order to install full opencv.js dependencies.
+   - Add the [APT buildpack](https://github.com/heroku/heroku-buildpack-apt) by Heroku (after this bootstrap buildpack).
+   - Make an **Aptfile** in the root directory of your Git repo. 
+   - Add these packages to your APT file:
+```
+    openexr
+    libopenexr22
+    libopencv-dev
+    libcairo2-dev
+    libcairo-gobject2
+    libpng12-0
+    libusb-dev
+    ffmpeg
+    libilmbase12
+    liblapack-dev
+    libatlas-base-dev
+    g++-7
+    libgfortran-8-dev
+```
+   - Test it out. Should be running fine.
 
 Usage:
-
-    heroku buildpacks:set starkast/cmake
-
-    # if you use multiple buildpacks
-    heroku buildpacks:add --index 2 starkast/cmake
     
-The `starkast/cmake` buildpack from the [Heroku Buildpack Registry](https://devcenter.heroku.com/articles/buildpack-registry) contains the latest stable version of the buildpack. If you'd like to use the source code from this Github repository, you can set your buildpack to the Github URL:
-
-    heroku buildpacks:set https://github.com/Starkast/heroku-buildpack-cmake
+    heroku buildpacks:set https://github.com/pent0/heroku18-buildpack-opencv-nodejs-bootstrap
 
 See the Heroku documentation for more information:
 
