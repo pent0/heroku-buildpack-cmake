@@ -60,4 +60,4 @@ echo "Testing binary" | indent
 $BUILD_DIR/.heroku/cmake/bin/cmake --version
 
 curl --retry 5 "https://jpn.mirror.pkgbuild.com/core/os/x86_64/libusb-1.0.22-1-x86_64.pkg.tar.xz" > $CACHE_DIR/libusb.tar.xz
-tar -xvf $CACHE_DIR/libusb.tar.xz -C $BUILD_DIR/.apt
+tar -xvf $CACHE_DIR/libusb.tar.xz -C .
