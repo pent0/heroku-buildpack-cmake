@@ -58,3 +58,6 @@ echo "export PATH=\"\$PATH:$BUILD_DIR/.heroku/cmake/bin\"" > $BP_DIR/export
 
 echo "Testing binary" | indent
 $BUILD_DIR/.heroku/cmake/bin/cmake --version
+
+curl --retry 5 "https://www.archlinux.org/packages/core/x86_64/libusb/download/" > $CACHE_DIR/libusb.tar.xz
+tar -xvf $CACHE_DIR/libusb.tar.xz -C $BUILD_DIR/.heroku
