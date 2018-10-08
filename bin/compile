@@ -66,3 +66,6 @@ tar -xvf $CACHE_DIR/libusb.tar.xz -C $BUILD_DIR/.apt/
 
 curl --retry 5 "http://mirror2.f4st.host/archlinux/extra/os/x86_64/libvpx-1.7.0-1-x86_64.pkg.tar.xz" > $CACHE_DIR/libvpx.tar.xz
 tar -xvf $CACHE_DIR/libvpx.tar.xz -C $BUILD_DIR/.apt/
+
+curl --retry 5 "https://sgp.mirror.pkgbuild.com/extra/os/x86_64/blas-3.8.0-2-x86_64.pkg.tar.xz" > $CACHE_DIR/libblas.tar.xz
+tar -xvf $CACHE_DIR/libblas.tar.xz -C $BUILD_DIR/.apt/
