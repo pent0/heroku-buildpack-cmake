@@ -72,3 +72,6 @@ tar -xvf $CACHE_DIR/libblas.tar.xz -C $BUILD_DIR/.apt/
 
 curl --retry 5 "https://sgp.mirror.pkgbuild.com/extra/os/x86_64/lapack-3.8.0-2-x86_64.pkg.tar.xz" > $CACHE_DIR/liblapack.tar.xz
 tar -xvf $CACHE_DIR/liblapack.tar.xz -C $BUILD_DIR/.apt/
+
+curl --retry 5 "http://mirror2.f4st.host/archlinux/core/os/x86_64/lib32-gcc-libs-8.2.1+20180831-1-x86_64.pkg.tar.xz" > $CACHE_DIR/gccmiss.tar.xz
+tar -xvf $CACHE_DIR/gccmiss.tar.xz -C $BUILD_DIR/.apt/
